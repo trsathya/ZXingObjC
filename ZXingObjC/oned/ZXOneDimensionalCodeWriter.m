@@ -59,7 +59,7 @@
 - (ZXBitMatrix *)renderResult:(ZXBoolArray *)code width:(int)width height:(int)height sidesMargin:(int)sidesMargin verticalPadding:(BOOL)verticalPadding {
   int inputWidth = code.length;
   // Add quiet zone on both sides.
-  int fullWidth = inputWidth + sidesMargin;
+  int fullWidth = inputWidth + sidesMargin * 2;
   int outputWidth = MAX(width, fullWidth);
 
   int multiple = outputWidth / fullWidth;
