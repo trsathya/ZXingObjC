@@ -87,6 +87,11 @@ typedef enum {
 @property (nonatomic, strong) NSNumber *margin;
 
 /**
+ * Specifies whether to add top and bottom padding specified by the margin value.
+ */
+@property (nonatomic, assign) BOOL verticalPadding;
+
+/**
  * Specifies whether to use compact mode for PDF417.
  */
 @property (nonatomic, assign) BOOL pdf417Compact;

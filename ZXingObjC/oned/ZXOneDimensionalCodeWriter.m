@@ -50,13 +50,13 @@
   }
 
   ZXBoolArray *code = [self encode:contents];
-  return [self renderResult:code width:width height:height sidesMargin:sidesMargin];
+  return [self renderResult:code width:width height:height sidesMargin:sidesMargin verticalPadding:hints.verticalPadding];
 }
 
 /**
  * @return a byte array of horizontal pixels (0 = white, 1 = black)
  */
-- (ZXBitMatrix *)renderResult:(ZXBoolArray *)code width:(int)width height:(int)height sidesMargin:(int)sidesMargin {
+- (ZXBitMatrix *)renderResult:(ZXBoolArray *)code width:(int)width height:(int)height sidesMargin:(int)sidesMargin verticalPadding:(BOOL)verticalPadding {
   int inputWidth = code.length;
   // Add quiet zone on both sides.
   int fullWidth = inputWidth + sidesMargin;
@@ -67,10 +67,10 @@
   outputWidth = fullWidth * multiple;
   int leftPadding = (outputWidth - (inputWidth * multiple)) / 2;
 
-  ZXBitMatrix *output = [[ZXBitMatrix alloc] initWithWidth:outputWidth height:outputHeight];
+  ZXBitMatrix *output = [[ZXBitMatrix alloc] initWithWidth:outputWidth height:outputHeight + (verticalPadding ? leftPadding * 2 : 0)];
   for (int inputX = 0, outputX = leftPadding; inputX < inputWidth; inputX++, outputX += multiple) {
     if (code.array[inputX]) {
-      [output setRegionAtLeft:outputX top:0 width:multiple height:outputHeight];
+      [output setRegionAtLeft:outputX top:(verticalPadding ? leftPadding : 0) width:multiple height:outputHeight];
     }
   }
   return output;

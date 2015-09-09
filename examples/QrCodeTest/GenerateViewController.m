@@ -40,6 +40,8 @@
     ZXEncodeHints *hints = [ZXEncodeHints hints];
     hints.pdf417Dimensions = dim;
     hints.pdf417Compact = YES;
+    hints.pdf417AspectRatio = 2;
+    hints.verticalPadding = YES;
     UIScreen *screen = [UIScreen mainScreen];
   ZXBitMatrix *result = [writer encode:data
                                 format:kBarcodeFormatQRCode
