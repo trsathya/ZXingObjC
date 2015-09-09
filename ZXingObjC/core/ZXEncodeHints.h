@@ -92,6 +92,11 @@ typedef enum {
 @property (nonatomic, assign) BOOL pdf417Compact;
 
 /**
+ * Specifies the aspect ratio for PDF417 modules. Ideal value 3. Can be 2 or more.
+ */
+@property (nonatomic, assign) int pdf417AspectRatio;
+
+/**
  * Specifies what compaction mode to use for PDF417.
  */
 @property (nonatomic, assign) ZXPDF417Compaction pdf417Compaction;

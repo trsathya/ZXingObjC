@@ -56,7 +56,7 @@ const int ZX_PDF417_WHITE_SPACE = 30;
     }
   }
 
-  return [self bitMatrixFromEncoder:encoder contents:contents width:width height:height margin:margin error:error];
+  return [self bitMatrixFromEncoder:encoder contents:contents width:width height:height margin:margin aspect:hints.pdf417AspectRatio error:error];
 }
 
 - (ZXBitMatrix *)encode:(NSString *)contents format:(ZXBarcodeFormat)format width:(int)width height:(int)height error:(NSError **)error {
@@ -71,6 +71,7 @@ const int ZX_PDF417_WHITE_SPACE = 30;
                                 width:(int)width
                                height:(int)height
                                margin:(int)margin
+                               aspect:(int)aspect
                                 error:(NSError **)error {
   int errorCorrectionLevel = 2;
   if (![encoder generateBarcodeLogic:contents errorCorrectionLevel:errorCorrectionLevel error:error]) {
@@ -78,7 +79,7 @@ const int ZX_PDF417_WHITE_SPACE = 30;
   }
 
   int lineThickness = 2;
-  int aspectRatio = 4;
+  int aspectRatio = aspect > 1 ? aspect : 4;
   NSArray *originalScale = [[encoder barcodeMatrix] scaledMatrixWithXScale:lineThickness yScale:aspectRatio * lineThickness];
   BOOL rotated = NO;
   if ((height > width) ^ ([(ZXByteArray *)originalScale[0] length] < [originalScale count])) {
