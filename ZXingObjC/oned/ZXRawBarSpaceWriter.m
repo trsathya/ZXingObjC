@@ -29,15 +29,13 @@
 
 - (ZXBoolArray *)encode:(NSString *)contents {
     int count = 0;
-    NSInteger myArray[contents.length];
+    int myArray[contents.length];
     for (int i = 0; i < contents.length ; i++) {
-        NSString *ch = [contents substringWithRange:NSMakeRange(i, 1)];
-        int value = ch.intValue;
-        count += value;
-        myArray[i] = value;
+        myArray[i] = [contents substringWithRange:NSMakeRange(i, 1)].intValue;
+        count += myArray[i];
     }
     ZXBoolArray *result = [[ZXBoolArray alloc] initWithLength:count];
-    [self appendPattern:result pos:0 pattern:myArray patternLen:sizeof(myArray)/sizeof(int) startColor:YES];
+    [self appendPattern:result pos:0 pattern:myArray patternLen:(int)sizeof(myArray)/sizeof(int) startColor:YES];
     return result;
 }
 
