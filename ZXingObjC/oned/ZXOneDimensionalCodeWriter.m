@@ -61,12 +61,12 @@
   // Add quiet zone on both sides.
   int fullWidth = inputWidth + sidesMargin;
   int outputWidth = MAX(width, fullWidth);
-  int outputHeight = MAX(1, height);
 
   int multiple = outputWidth / fullWidth;
   outputWidth = fullWidth * multiple;
   int leftPadding = (outputWidth - (inputWidth * multiple)) / 2;
 
+  int outputHeight = MAX(1, height) - (verticalPadding ? leftPadding * 2 : 0);
   ZXBitMatrix *output = [[ZXBitMatrix alloc] initWithWidth:outputWidth height:outputHeight + (verticalPadding ? leftPadding * 2 : 0)];
   for (int inputX = 0, outputX = leftPadding; inputX < inputWidth; inputX++, outputX += multiple) {
     if (code.array[inputX]) {
