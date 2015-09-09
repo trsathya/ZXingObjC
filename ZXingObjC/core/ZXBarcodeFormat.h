@@ -67,5 +67,8 @@ typedef enum {
   kBarcodeFormatUPCE,
 
   /** UPC/EAN extension format. Not a stand-alone format. */
-  kBarcodeFormatUPCEANExtension
+  kBarcodeFormatUPCEANExtension,
+
+  /** Raw bar/space 1D format. */
+  kBarcodeFormatRawBarSpace
 } ZXBarcodeFormat;

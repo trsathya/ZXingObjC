@@ -28,6 +28,7 @@
 #import "ZXPDF417Writer.h"
 #import "ZXQRCodeWriter.h"
 #import "ZXUPCAWriter.h"
+#import "ZXRawBarSpaceWriter.h"
 
 @implementation ZXMultiFormatWriter
 
@@ -84,6 +85,10 @@
 
     case kBarcodeFormatAztec:
       writer = [[ZXAztecWriter alloc] init];
+      break;
+
+    case kBarcodeFormatRawBarSpace:
+      writer = [[ZXRawBarSpaceWriter alloc] init];
       break;
 
     default:
