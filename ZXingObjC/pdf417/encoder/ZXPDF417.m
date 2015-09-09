@@ -672,7 +672,7 @@ const float ZX_PDF417_HEIGHT = 2.0f; //mm
   NSString *fullCodewords = [dataCodewords stringByAppendingString:ec];
 
   //4. step: low-level encoding
-  self.barcodeMatrix = [[ZXPDF417BarcodeMatrix alloc] initWithHeight:rows width:cols];
+  self.barcodeMatrix = [[ZXPDF417BarcodeMatrix alloc] initWithHeight:rows width:cols compact:self.compact];
   [self encodeLowLevel:fullCodewords c:cols r:rows errorCorrectionLevel:anErrorCorrectionLevel logic:self.barcodeMatrix];
 
   return YES;

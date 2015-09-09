@@ -26,11 +26,11 @@
 
 @implementation ZXPDF417BarcodeMatrix
 
-- (id)initWithHeight:(int)height width:(int)width {
+- (id)initWithHeight:(int)height width:(int)width compact:(BOOL)compact {
   if (self = [super init]) {
     NSMutableArray *matrix = [NSMutableArray array];
     for (int i = 0, matrixLength = height; i < matrixLength; i++) {
-      [matrix addObject:[ZXPDF417BarcodeRow barcodeRowWithWidth:(width + 4) * 17 + 1]];
+      [matrix addObject:[ZXPDF417BarcodeRow barcodeRowWithWidth:(width + (compact ? 2 : 4)) * 17 + 1]];
     }
     _rowMatrix = matrix;
     _width = width * 17;

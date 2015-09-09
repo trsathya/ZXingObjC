@@ -28,7 +28,7 @@
  * @param height the height of the matrix (Rows)
  * @param width  the width of the matrix (Cols)
  */
-- (id)initWithHeight:(int)height width:(int)width;
+- (id)initWithHeight:(int)height width:(int)width compact:(BOOL)compact;
 - (void)startRow;
 - (ZXPDF417BarcodeRow *)currentRow;
 - (NSArray *)matrix;
