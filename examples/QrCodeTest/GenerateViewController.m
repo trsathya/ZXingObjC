@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#import "ViewController.h"
+#import "GenerateViewController.h"
 
-@implementation ViewController
+@implementation GenerateViewController
 
 #pragma mark - View lifecycle
 
-- (void)viewWillAppear:(BOOL)animated {
-  [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
 
   self.textView.text = @"http://github.com/TheLevelUp/ZXingObjC";
   [self updatePressed:nil];
@@ -36,15 +36,21 @@
   if (data == 0) return;
 
   ZXMultiFormatWriter *writer = [[ZXMultiFormatWriter alloc] init];
+    ZXPDF417Dimensions *dim = [[ZXPDF417Dimensions alloc] initWithMinCols:3 maxCols:3 minRows:6 maxRows:6];
+    ZXEncodeHints *hints = [ZXEncodeHints hints];
+    hints.pdf417Dimensions = dim;
+    hints.pdf417Compact = YES;
+    UIScreen *screen = [UIScreen mainScreen];
   ZXBitMatrix *result = [writer encode:data
                                 format:kBarcodeFormatQRCode
-                                 width:self.imageView.frame.size.width
-                                height:self.imageView.frame.size.width
+                                 width:self.imageView.frame.size.width * screen.scale
+                                height:self.imageView.frame.size.height * screen.scale
+                                 hints:hints
                                  error:nil];
 
   if (result) {
     ZXImage *image = [ZXImage imageWithMatrix:result];
-    self.imageView.image = [UIImage imageWithCGImage:image.cgimage];
+    self.imageView.image = [UIImage imageWithCGImage:image.cgimage scale:screen.scale orientation:UIImageOrientationUp];
   } else {
     self.imageView.image = nil;
   }

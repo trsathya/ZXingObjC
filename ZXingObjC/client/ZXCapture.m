@@ -24,7 +24,7 @@
 #import "ZXReader.h"
 #import "ZXResult.h"
 
-@interface ZXCapture ()
+@interface ZXCapture () <AVCaptureMetadataOutputObjectsDelegate>
 
 @property (nonatomic, strong) CALayer *binaryLayer;
 @property (nonatomic, assign) BOOL cameraIsReady;
@@ -38,6 +38,7 @@
 @property (nonatomic, assign) int orderOutSkip;
 @property (nonatomic, assign) BOOL onScreen;
 @property (nonatomic, strong) AVCaptureVideoDataOutput *output;
+@property (nonatomic, strong) AVCaptureMetadataOutput *metadataOutput;
 @property (nonatomic, assign) BOOL running;
 @property (nonatomic, strong) AVCaptureSession *session;
 
@@ -115,6 +116,10 @@
     [_output setSampleBufferDelegate:self queue:_captureQueue];
 
     [self.session addOutput:_output];
+    _metadataOutput = [[AVCaptureMetadataOutput alloc] init];
+    [_metadataOutput setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+    [_session addOutput:_metadataOutput];
+    _metadataOutput.metadataObjectTypes = [_metadataOutput availableMetadataObjectTypes];
   }
 
   return _output;
@@ -403,6 +408,20 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
       }
     }
   }
+}
+
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
+{
+    CGRect highlightViewRect = CGRectZero;
+    AVMetadataMachineReadableCodeObject *barCodeObject;
+    for (AVMetadataObject *metadata in metadataObjects) {
+        barCodeObject = (AVMetadataMachineReadableCodeObject *)[(AVCaptureVideoPreviewLayer *)_layer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
+        highlightViewRect = barCodeObject.bounds;
+        if ([metadata isKindOfClass:[AVMetadataMachineReadableCodeObject class]]) {
+            AVMetadataMachineReadableCodeObject* mRMetaData = (AVMetadataMachineReadableCodeObject*)metadata;
+            NSLog(@"iOS Detected %@ Type %@ at %@", [mRMetaData stringValue], [mRMetaData type], [NSDate date]);
+        }
+    }
 }
 
 #pragma mark - Private

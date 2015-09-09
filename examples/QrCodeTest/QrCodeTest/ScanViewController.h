@@ -14,13 +14,8 @@
  * limitations under the License.
  */
 
-#import <UIKit/UIKit.h>
+#import <ZXingObjC/ZXingObjC.h>
 
-@interface ViewController : UIViewController
-
-@property (nonatomic, strong) IBOutlet UITextView *textView;
-@property (nonatomic, strong) IBOutlet UIImageView *imageView;
-
-- (IBAction)updatePressed:(id)sender;
+@interface ScanViewController : UIViewController <ZXCaptureDelegate>
 
 @end

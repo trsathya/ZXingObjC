@@ -16,11 +16,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class GenerateViewController;
+@interface GenerateViewController : UIViewController
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@property (nonatomic, strong) IBOutlet UITextView *textView;
+@property (nonatomic, strong) IBOutlet UIImageView *imageView;
 
-@property (nonatomic, strong) UIWindow *window;
-@property (nonatomic, strong) GenerateViewController *viewController;
+- (IBAction)updatePressed:(id)sender;
 
 @end

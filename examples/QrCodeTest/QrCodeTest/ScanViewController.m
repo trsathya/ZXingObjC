@@ -15,9 +15,9 @@
  */
 
 #import <AudioToolbox/AudioToolbox.h>
-#import "ViewController.h"
+#import "ScanViewController.h"
 
-@interface ViewController ()
+@interface ScanViewController ()
 
 @property (nonatomic, strong) ZXCapture *capture;
 @property (nonatomic, weak) IBOutlet UIView *scanRectView;
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation ViewController
+@implementation ScanViewController
 
 #pragma mark - View Controller Methods
 
@@ -52,10 +52,11 @@
   [super viewWillAppear:animated];
 
   self.capture.delegate = self;
-  self.capture.layer.frame = self.view.bounds;
 
   CGAffineTransform captureSizeTransform = CGAffineTransformMakeScale(320 / self.view.frame.size.width, 480 / self.view.frame.size.height);
+    
   self.capture.scanRect = CGRectApplyAffineTransform(self.scanRectView.frame, captureSizeTransform);
+  self.capture.layer.frame = self.scanRectView.frame;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {

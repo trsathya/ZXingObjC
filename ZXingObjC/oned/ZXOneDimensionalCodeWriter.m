@@ -64,6 +64,7 @@
   int outputHeight = MAX(1, height);
 
   int multiple = outputWidth / fullWidth;
+  outputWidth = fullWidth * multiple;
   int leftPadding = (outputWidth - (inputWidth * multiple)) / 2;
 
   ZXBitMatrix *output = [[ZXBitMatrix alloc] initWithWidth:outputWidth height:outputHeight];
