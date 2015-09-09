@@ -89,7 +89,7 @@ typedef enum {
 /**
  * Specifies whether to add top and bottom padding specified by the margin value.
  */
-@property (nonatomic, assign) BOOL verticalPadding;
+@property (nonatomic, assign) int verticalPadding;
 
 /**
  * Specifies whether to use compact mode for PDF417.
