@@ -66,7 +66,7 @@
   outputWidth = fullWidth * multiple;
   int leftPadding = (outputWidth - (inputWidth * multiple)) / 2;
 
-  int outputHeight = MAX(1, height) - verticalPadding * 2;
+  int outputHeight = MAX(1 + verticalPadding * 2, height) - verticalPadding * 2;
   ZXBitMatrix *output = [[ZXBitMatrix alloc] initWithWidth:outputWidth height:outputHeight + verticalPadding * 2];
   for (int inputX = 0, outputX = leftPadding; inputX < inputWidth; inputX++, outputX += multiple) {
     if (code.array[inputX]) {
