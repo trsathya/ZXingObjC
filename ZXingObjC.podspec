@@ -49,4 +49,14 @@ Pod::Spec.new do |s|
     ss.dependency 'ZXingObjC/Core'
     ss.source_files = 'ZXingObjC/qrcode/**/*.{h,m}'
   end
+
+  s.subspec 'PDF417' do |ss|
+    ss.dependency 'ZXingObjC/Core'
+    ss.source_files = 'ZXingObjC/pdf417/**/*.{h,m}'
+  end
+
+  s.subspec 'Code128' do |ss|
+    ss.dependency 'ZXingObjC/Core'
+    ss.source_files = 'ZXingObjC/onedcommon/**/*.{h,m}', 'ZXingObjC/code128/**/*.{h,m}'
+  end
 end
