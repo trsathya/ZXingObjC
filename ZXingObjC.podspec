@@ -61,7 +61,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'PDF417Writer' do |ss|
     ss.dependency 'ZXingObjC/CoreWriter'
-    ss.source_files = 'ZXingObjC/pdf417/**/*.{h,m}'
+    ss.source_files = 'ZXingObjC/pdf417/**/*.{h,m}', 'ZXingObjC/multi/ZXMultipleBarcodeReader.h'
   end
 
   s.subspec 'Code128Writer' do |ss|
