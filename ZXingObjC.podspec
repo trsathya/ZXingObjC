@@ -54,18 +54,23 @@ Pod::Spec.new do |s|
     ss.source_files = 'ZXingObjC/qrcode/**/*.{h,m}'
   end
 
+  s.subspec 'CoreOneD' do |ss|
+    ss.dependency 'ZXingObjC/CoreWriter'
+    ss.source_files = 'ZXingObjC/oned/ZXOneD*.{h,m}'
+  end
+
   s.subspec 'PDF417Writer' do |ss|
     ss.dependency 'ZXingObjC/CoreWriter'
     ss.source_files = 'ZXingObjC/pdf417/**/*.{h,m}'
   end
 
   s.subspec 'Code128Writer' do |ss|
-    ss.dependency 'ZXingObjC/CoreWriter'
+    ss.dependency 'ZXingObjC/CoreOneD'
     ss.source_files = 'ZXingObjC/oned/ZXCode128*.{h,m}'
   end
   
   s.subspec 'RawBarSpaceWriter' do |ss|
-    ss.dependency 'ZXingObjC/CoreWriter'
+    ss.dependency 'ZXingObjC/CoreOneD'
     ss.source_files = 'ZXingObjC/oned/ZXRawBarSpaceWriter.{h,m}'
   end
 end
