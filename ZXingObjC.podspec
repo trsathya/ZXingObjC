@@ -26,6 +26,10 @@ Pod::Spec.new do |s|
     ss.source_files = 'ZXingObjC/aztec/**/*.{h,m}'
   end
 
+  s.subspec 'RealCore' do |ss|
+    ss.source_files = 'ZXingObjC/common/**/*.{h,m}', 'ZXingObjC/core/*.{h,m}'
+  end
+
   s.subspec 'Core' do |ss|
     ss.source_files = 'ZXingObjC/client/*.{h,m}', 'ZXingObjC/common/**/*.{h,m}', 'ZXingObjC/core/*.{h,m}', 'ZXingObjC/multi/*.{h,m}'
   end
@@ -51,12 +55,12 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'PDF417' do |ss|
-    ss.dependency 'ZXingObjC/Core'
+    ss.dependency 'ZXingObjC/RealCore'
     ss.source_files = 'ZXingObjC/pdf417/**/*.{h,m}'
   end
 
   s.subspec 'Code128' do |ss|
-    ss.dependency 'ZXingObjC/Core'
-    ss.source_files = 'ZXingObjC/onedcommon/**/*.{h,m}', 'ZXingObjC/code128/**/*.{h,m}'
+    ss.dependency 'ZXingObjC/RealCore'
+    ss.source_files = 'ZXingObjC/oned/ZXCode128*.{h,m}'
   end
 end
