@@ -26,8 +26,8 @@ Pod::Spec.new do |s|
     ss.source_files = 'ZXingObjC/aztec/**/*.{h,m}'
   end
 
-  s.subspec 'RealCore' do |ss|
-    ss.source_files = 'ZXingObjC/common/**/*.{h,m}', 'ZXingObjC/core/*.{h,m}'
+  s.subspec 'CoreWriter' do |ss|
+    ss.source_files = 'ZXingObjC/common/**/*.{h,m}', 'ZXingObjC/core/*.{h,m}', 'ZXingObjC/client/ZXImage.{h,m}'
   end
 
   s.subspec 'Core' do |ss|
@@ -54,13 +54,18 @@ Pod::Spec.new do |s|
     ss.source_files = 'ZXingObjC/qrcode/**/*.{h,m}'
   end
 
-  s.subspec 'PDF417' do |ss|
-    ss.dependency 'ZXingObjC/RealCore'
+  s.subspec 'PDF417Writer' do |ss|
+    ss.dependency 'ZXingObjC/CoreWriter'
     ss.source_files = 'ZXingObjC/pdf417/**/*.{h,m}'
   end
 
-  s.subspec 'Code128' do |ss|
-    ss.dependency 'ZXingObjC/RealCore'
+  s.subspec 'Code128Writer' do |ss|
+    ss.dependency 'ZXingObjC/CoreWriter'
     ss.source_files = 'ZXingObjC/oned/ZXCode128*.{h,m}'
+  end
+  
+  s.subspec 'RawBarSpaceWriter' do |ss|
+    ss.dependency 'ZXingObjC/CoreWriter'
+    ss.source_files = 'ZXingObjC/oned/ZXRawBarSpaceWriter.{h,m}'
   end
 end

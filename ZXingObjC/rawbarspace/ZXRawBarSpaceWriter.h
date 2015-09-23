@@ -1,1 +1,0 @@
-../oned/ZXRawBarSpaceWriter.h
