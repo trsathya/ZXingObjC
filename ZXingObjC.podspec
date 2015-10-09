@@ -90,7 +90,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Decoder' do |ss|
-    ss.dependency 'ZXingObjC/CoreWriter'
-    ss.source_files = 'ZXingObjC/client/ZXCGImage*.{h,m}', 'ZXingObjC/oned/ZXCode128Reader.{h,m}', 'ZXingObjC/oned/ZXCode93Reader.{h,m}', 'ZXingObjC/oned/ZXCode39Reader.{h,m}', 'ZXingObjC/oned/ZXITFReader.{h,m}', 'ZXingObjC/aztec/detector/*.{h,m}'
+    ss.dependency 'ZXingObjC/AztecReader'
+    ss.source_files = 'ZXingObjC/client/ZXCGImage*.{h,m}', 'ZXingObjC/oned/ZXCode128Reader.{h,m}', 'ZXingObjC/oned/ZXCode93Reader.{h,m}', 'ZXingObjC/oned/ZXCode39Reader.{h,m}', 'ZXingObjC/oned/ZXITFReader.{h,m}'
   end
 end
