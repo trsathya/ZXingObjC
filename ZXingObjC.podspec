@@ -73,4 +73,9 @@ Pod::Spec.new do |s|
     ss.dependency 'ZXingObjC/CoreOneD'
     ss.source_files = 'ZXingObjC/oned/ZXRawBarSpaceWriter.{h,m}'
   end
+
+  s.subspec 'Decoder' do |ss|
+    ss.dependency 'ZXingObjC/CoreWriter'
+    ss.source_files = 'ZXingObjC/client/ZXCGImage*.{h,m}'
+  end
 end
