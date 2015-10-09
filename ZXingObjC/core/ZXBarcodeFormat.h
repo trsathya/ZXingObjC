@@ -17,7 +17,7 @@
 /**
  * Enumerates barcode formats known to this package. Please keep alphabetized.
  */
-typedef enum {
+typedef NS_ENUM(NSUInteger, ZXBarcodeFormat) {
   /** Aztec 2D barcode format. */
   kBarcodeFormatAztec,
 
@@ -71,4 +71,4 @@ typedef enum {
 
   /** Raw bar/space 1D format. */
   kBarcodeFormatRawBarSpace
-} ZXBarcodeFormat;
+};

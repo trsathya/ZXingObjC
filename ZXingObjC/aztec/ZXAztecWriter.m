@@ -47,7 +47,7 @@ const NSStringEncoding ZX_AZTEC_DEFAULT_ENCODING = NSISOLatin1StringEncoding;
                  height:(int)height encoding:(NSStringEncoding)encoding eccPercent:(int)eccPercent layers:(int)layers {
   if (format != kBarcodeFormatAztec) {
     @throw [NSException exceptionWithName:NSInvalidArgumentException
-                                   reason:[NSString stringWithFormat:@"Can only encode kBarcodeFormatAztec (%d), but got %d", kBarcodeFormatAztec, format]
+                                   reason:[NSString stringWithFormat:@"Can only encode kBarcodeFormatAztec (%lu), but got %lu", (unsigned long)kBarcodeFormatAztec, (unsigned long)format]
                                  userInfo:nil];
   }
 

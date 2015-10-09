@@ -1656,6 +1656,12 @@
 		25FE5D4016D0B84C00826CDB /* ZXRSSExpandedStackedInternalTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FE5D3F16D0B84C00826CDB /* ZXRSSExpandedStackedInternalTestCase.m */; };
 		25FE5D4316D0B8B200826CDB /* ZXTestCaseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FE5D4216D0B8B200826CDB /* ZXTestCaseUtil.m */; };
 		25FE5D4516D1997C00826CDB /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 25FE5D4416D1997C00826CDB /* Resources */; };
+		5C38E10D1BC85F1D00B56EFD /* ZXRawBarSpaceWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B9F61BA0C5FA000CB180 /* ZXRawBarSpaceWriter.m */; settings = {ASSET_TAGS = (); }; };
+		5C38E10E1BC85F2C00B56EFD /* ZXRawBarSpaceWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B9F61BA0C5FA000CB180 /* ZXRawBarSpaceWriter.m */; settings = {ASSET_TAGS = (); }; };
+		5C38E10F1BC85F2D00B56EFD /* ZXRawBarSpaceWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B9F61BA0C5FA000CB180 /* ZXRawBarSpaceWriter.m */; settings = {ASSET_TAGS = (); }; };
+		5C38E1101BC85F4600B56EFD /* ZXRawBarSpaceWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C44B9F51BA0C5FA000CB180 /* ZXRawBarSpaceWriter.h */; settings = {ASSET_TAGS = (); }; };
+		5C38E1111BC85F4700B56EFD /* ZXRawBarSpaceWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C44B9F51BA0C5FA000CB180 /* ZXRawBarSpaceWriter.h */; settings = {ASSET_TAGS = (); }; };
+		5C38E1121BC85F4700B56EFD /* ZXRawBarSpaceWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C44B9F51BA0C5FA000CB180 /* ZXRawBarSpaceWriter.h */; settings = {ASSET_TAGS = (); }; };
 		5C44B9F71BA0C5FA000CB180 /* ZXRawBarSpaceWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C44B9F51BA0C5FA000CB180 /* ZXRawBarSpaceWriter.h */; };
 		5C44B9F81BA0C5FA000CB180 /* ZXRawBarSpaceWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C44B9F61BA0C5FA000CB180 /* ZXRawBarSpaceWriter.m */; };
 		DB7257521A52420400EFF81B /* ZXAztecDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 25403CEF166A999D00E13304 /* ZXAztecDecoder.m */; };
@@ -4514,6 +4520,7 @@
 				2540455A166ABAF000E13304 /* ZXWhiteRectangleDetector.h in Headers */,
 				0294D163190EDAA300BBACCB /* ZXMultiDetector.h in Headers */,
 				2540455B166ABAF000E13304 /* ZXGenericGF.h in Headers */,
+				5C38E1101BC85F4600B56EFD /* ZXRawBarSpaceWriter.h in Headers */,
 				0294D14B190ED90B00BBACCB /* ZXResultPointCallback.h in Headers */,
 				2540455C166ABAF000E13304 /* ZXGenericGFPoly.h in Headers */,
 				2540455D166ABAF000E13304 /* ZXReedSolomonDecoder.h in Headers */,
@@ -4758,6 +4765,7 @@
 				255E484F18143A8800A03A28 /* ZXImage.h in Headers */,
 				0294D164190EDAA300BBACCB /* ZXMultiDetector.h in Headers */,
 				255E485118143A8800A03A28 /* ZXMathUtils.h in Headers */,
+				5C38E1111BC85F4700B56EFD /* ZXRawBarSpaceWriter.h in Headers */,
 				0294D14C190ED90B00BBACCB /* ZXResultPointCallback.h in Headers */,
 				255E485218143A8800A03A28 /* ZXMonochromeRectangleDetector.h in Headers */,
 				255E485318143A8800A03A28 /* ZXWhiteRectangleDetector.h in Headers */,
@@ -5002,6 +5010,7 @@
 				DB7259B11A5245BB00EFF81B /* ZXRSSExpandedPair.h in Headers */,
 				DB7259541A52449A00EFF81B /* ZXCGImageLuminanceSource.h in Headers */,
 				DB7259C51A52460500EFF81B /* ZXEANManufacturerOrgSupport.h in Headers */,
+				5C38E1121BC85F4700B56EFD /* ZXRawBarSpaceWriter.h in Headers */,
 				DB7259511A52448D00EFF81B /* ZXWifiResultParser.h in Headers */,
 				DB7259881A52454400EFF81B /* ZXDataMatrixDefaultPlacement.h in Headers */,
 				DB725A001A52475B00EFF81B /* ZXQRCodeBlockPair.h in Headers */,
@@ -5302,7 +5311,7 @@
 			attributes = {
 				CLASSPREFIX = ZX;
 				LastTestingUpgradeCheck = 0510;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = zxing;
 				TargetAttributes = {
 					25404177166AADAC00E13304 = {
@@ -5732,6 +5741,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2540418F166AAE6000E13304 /* ZXAztecDecoder.m in Sources */,
+				5C38E10E1BC85F2C00B56EFD /* ZXRawBarSpaceWriter.m in Sources */,
 				2519AB3817FD1EC000A71C45 /* ZXAztecWriter.m in Sources */,
 				25404190166AAE6000E13304 /* ZXAztecDetector.m in Sources */,
 				25404191166AAE6000E13304 /* ZXAztecDetectorResult.m in Sources */,
@@ -6089,6 +6099,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				255E482018143A4A00A03A28 /* ZXDataMatrixC40Encoder.m in Sources */,
+				5C38E10F1BC85F2D00B56EFD /* ZXRawBarSpaceWriter.m in Sources */,
 				25404648166ABBED00E13304 /* ZXAztecDecoder.m in Sources */,
 				25404649166ABBED00E13304 /* ZXAztecDetector.m in Sources */,
 				2540464A166ABBED00E13304 /* ZXAztecDetectorResult.m in Sources */,
@@ -6316,6 +6327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB7257521A52420400EFF81B /* ZXAztecDecoder.m in Sources */,
+				5C38E10D1BC85F1D00B56EFD /* ZXRawBarSpaceWriter.m in Sources */,
 				DB7257531A52420400EFF81B /* ZXAztecWriter.m in Sources */,
 				DB7257541A52420400EFF81B /* ZXAztecDetector.m in Sources */,
 				DB7257551A52420400EFF81B /* ZXAztecDetectorResult.m in Sources */,
@@ -6616,6 +6628,7 @@
 					"-framework",
 					XCTest,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zxing.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Distribution;
@@ -6652,6 +6665,7 @@
 					"-framework",
 					XCTest,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zxing.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = xctest;
@@ -6692,6 +6706,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_VERSION = 3.1.0;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -6793,6 +6808,7 @@
 					"-framework",
 					XCTest,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zxing.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -6815,6 +6831,7 @@
 					"-framework",
 					XCTest,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zxing.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -6862,6 +6879,7 @@
 					"-framework",
 					XCTest,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zxing.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = xctest;
@@ -6887,6 +6905,7 @@
 					"-framework",
 					XCTest,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zxing.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = xctest;
@@ -6971,6 +6990,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zxing.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ZXingObjC;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -7008,6 +7028,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zxing.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ZXingObjC;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -7045,6 +7066,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zxing.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ZXingObjC;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

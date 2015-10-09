@@ -36,7 +36,7 @@
 - (ZXBitMatrix *)encode:(NSString *)contents format:(ZXBarcodeFormat)format width:(int)width height:(int)height hints:(ZXEncodeHints *)hints error:(NSError **)error {
   if (format != kBarcodeFormatUPCA) {
     @throw [NSException exceptionWithName:NSInvalidArgumentException
-                                   reason:[NSString stringWithFormat:@"Can only encode UPC-A, but got %d", format]
+                                   reason:[NSString stringWithFormat:@"Can only encode UPC-A, but got %lu", (unsigned long)format]
                                  userInfo:nil];
   }
   return [self.subWriter encode:[self preencode:contents] format:kBarcodeFormatEan13 width:width height:height hints:hints error:error];

@@ -32,7 +32,7 @@ const int ZX_PDF417_WHITE_SPACE = 30;
 - (ZXBitMatrix *)encode:(NSString *)contents format:(ZXBarcodeFormat)format width:(int)width height:(int)height
                   hints:(ZXEncodeHints *)hints error:(NSError **)error {
   if (format != kBarcodeFormatPDF417) {
-    [NSException raise:NSInvalidArgumentException format:@"Can only encode PDF_417, but got %d", format];
+    [NSException raise:NSInvalidArgumentException format:@"Can only encode PDF_417, but got %lu", (unsigned long)format];
   }
 
   ZXPDF417 *encoder = [[ZXPDF417 alloc] init];
