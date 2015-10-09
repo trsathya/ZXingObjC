@@ -26,10 +26,6 @@ Pod::Spec.new do |s|
     ss.source_files = 'ZXingObjC/aztec/**/*.{h,m}'
   end
 
-  s.subspec 'CoreWriter' do |ss|
-    ss.source_files = 'ZXingObjC/common/**/*.{h,m}', 'ZXingObjC/core/*.{h,m}', 'ZXingObjC/client/ZXImage.{h,m}'
-  end
-
   s.subspec 'Core' do |ss|
     ss.source_files = 'ZXingObjC/client/*.{h,m}', 'ZXingObjC/common/**/*.{h,m}', 'ZXingObjC/core/*.{h,m}', 'ZXingObjC/multi/*.{h,m}'
   end
@@ -54,6 +50,15 @@ Pod::Spec.new do |s|
     ss.source_files = 'ZXingObjC/qrcode/**/*.{h,m}'
   end
 
+  s.subspec 'CommonCore' do |ss|
+    ss.source_files = 'ZXingObjC/common/**/*.{h,m}', 'ZXingObjC/core/*.{h,m}'
+  end
+
+  s.subspec 'CoreWriter' do |ss|
+    ss.dependency 'ZXingObjC/CommonCore'
+    ss.source_files = 'ZXingObjC/client/ZXImage.{h,m}'
+  end
+
   s.subspec 'CoreOneD' do |ss|
     ss.dependency 'ZXingObjC/CoreWriter'
     ss.source_files = 'ZXingObjC/oned/ZXOneD*.{h,m}'
@@ -74,8 +79,18 @@ Pod::Spec.new do |s|
     ss.source_files = 'ZXingObjC/oned/ZXRawBarSpaceWriter.{h,m}'
   end
 
+  s.subspec 'AztecReader' do |ss|
+    ss.dependency 'ZXingObjC/CommonCore'
+    ss.source_files = 'ZXingObjC/aztec/ZXAztecDetectorResult.{h,m}', 'ZXingObjC/aztec/ZXAztecReader.{h,m}', 'ZXingObjC/aztec/detector/*.{h,m}', 'ZXingObjC/aztec/decoder/*.{h,m}'
+  end
+
+  s.subspec 'AztecWriter' do |ss|
+    ss.dependency 'ZXingObjC/CommonCore'
+    ss.source_files = 'ZXingObjC/aztec/ZXAztecDetectorResult.{h,m}', 'ZXingObjC/aztec/ZXAztecWriter.{h,m}', 'ZXingObjC/aztec/encoder/*.{h,m}'
+  end
+
   s.subspec 'Decoder' do |ss|
     ss.dependency 'ZXingObjC/CoreWriter'
-    ss.source_files = 'ZXingObjC/client/ZXCGImage*.{h,m}', 'ZXingObjC/oned/ZXCode128Reader.{h,m}', 'ZXingObjC/oned/ZXCode93Reader.{h,m}', 'ZXingObjC/oned/ZXCode39Reader.{h,m}', 'ZXingObjC/oned/ZXITFReader.{h,m}', 'ZXingObjC/aztec/ZXAztecReader.{h,m}'
+    ss.source_files = 'ZXingObjC/client/ZXCGImage*.{h,m}', 'ZXingObjC/oned/ZXCode128Reader.{h,m}', 'ZXingObjC/oned/ZXCode93Reader.{h,m}', 'ZXingObjC/oned/ZXCode39Reader.{h,m}', 'ZXingObjC/oned/ZXITFReader.{h,m}', 'ZXingObjC/aztec/detector/*.{h,m}'
   end
 end
