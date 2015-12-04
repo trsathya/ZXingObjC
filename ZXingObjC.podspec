@@ -74,6 +74,11 @@ Pod::Spec.new do |s|
     ss.source_files = 'ZXingObjC/oned/ZXCode128*.{h,m}'
   end
   
+  s.subspec 'ITFWriter' do |ss|
+    ss.dependency 'ZXingObjC/CoreOneD'
+    ss.source_files = 'ZXingObjC/oned/ZXITF*.{h,m}'
+  end
+
   s.subspec 'RawBarSpaceWriter' do |ss|
     ss.dependency 'ZXingObjC/CoreOneD'
     ss.source_files = 'ZXingObjC/oned/ZXRawBarSpaceWriter.{h,m}'
