@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 ZXing authors
+ * Copyright 2012 ZXing authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,10 @@
  * limitations under the License.
  */
 
-#ifndef _ZXINGOBJC_DATAMATRIX_
+#import "ZXMultiAbstractBlackBoxTestCase.h"
 
-#define _ZXINGOBJC_DATAMATRIX_
+@interface ZXGenericMultipleBarcodeReaderTestCase : ZXMultiAbstractBlackBoxTestCase
 
-#import "ZXDataMatrixDecoder.h"
-#import "ZXDataMatrixDefaultPlacement.h"
-#import "ZXDataMatrixDetector.h"
-#import "ZXDataMatrixEdifactEncoder.h"
-#import "ZXDataMatrixEncoder.h"
-#import "ZXDataMatrixEncoderContext.h"
-#import "ZXDataMatrixErrorCorrection.h"
-#import "ZXDataMatrixHighLevelEncoder.h"
-#import "ZXDataMatrixReader.h"
-#import "ZXDataMatrixSymbolInfo.h"
-#import "ZXDataMatrixVersion.h"
-#import "ZXDataMatrixWriter.h"
+@property (nonatomic, strong) ZXMultiFormatReader *reader;
 
-#endif
+@end
